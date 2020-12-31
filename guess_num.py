@@ -19,7 +19,7 @@ class InputNum():
     def initial(self):
 
         list_input = list(int(item) for item in
-            str(input('Input a non-repeating four-digit number:\n\n')))
+            str(input('Input 4 unduplicated numbers:\n\n')))
         while len(list_input) != 4:
             list_input = list(int(item) for item in str(input
                 ('Warning! A 4-digit number is needed, retry:\n')))
@@ -78,7 +78,7 @@ def compr_two_lists(list1, list2):
 
 
 list_create = crt_num()
-# print(list_create)  # prove
+print(list_create)  # prove
 list_temp = InputNum()
 list_input = list_temp.initial()
 
