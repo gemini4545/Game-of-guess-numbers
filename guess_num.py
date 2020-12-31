@@ -78,7 +78,7 @@ def compr_two_lists(list1, list2):
 
 
 list_create = crt_num()
-print(list_create)  # prove
+# print(list_create)  # prove
 list_temp = InputNum()
 list_input = list_temp.initial()
 
