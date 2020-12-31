@@ -13,33 +13,30 @@ def crt_num():
     return list_create
 
 
+prompt_1 = "Input 4 unduplicated numbers:\n\n"
+prompt_2 = "Try again:\n\n"
+prompt_3 = "Warning! Four numbers are required. Retry:\n"
+prompt_4 = "Warning! Unduplicated numbers are requrired. Retry:\n"
+
 # Ask player to input a proper 4-digit number
 class InputNum():
 
     def initial(self):
 
-        list_input = list(int(item) for item in
-            str(input('Input 4 unduplicated numbers:\n\n')))
+        list_input = list(int(item) for item in str(input(prompt_1)))
         while len(list_input) != 4:
-            list_input = list(int(item) for item in str(input
-                ('Warning! A 4-digit number is needed, retry:\n')))
+            list_input = list(int(item) for item in str(input(prompt_3)))
         while len(list_input) != len(set(list_input)):
-            list_input = list(int(item) for item in str(input
-                ("warning! unduplicated digitals are needed, retry:\n")))
-
+            list_input = list(int(item) for item in str(input(prompt_4)))
         return list_input
 
     def other_say(self):
 
-        list_input = list(int(item) for item in
-                 str(input('Try agian:\n\n')))
+        list_input = list(int(item) for item in str(input(prompt_2)))
         while len(list_input) != 4:
-            list_input = list(int(item) for item in str(input
-                 ('Warning! A 4-digit number is needed, retry:\n')))
+            list_input = list(int(item) for item in str(input(prompt_3)))
         while len(list_input) != len(set(list_input)):
-            list_input = list(int(item) for item in str(input
-                 ("warning! unduplicated digitals are needed, retry:\n")))
-
+            list_input = list(int(item) for item in str(input(prompt_4)))
         return list_input
 
 
@@ -71,10 +68,10 @@ def compr_two_lists(list1, list2):
 
     if list1 == list2:
         counts = ['1st','2nd','3rd','4th','5th','6th','7th','8th','9th']
-        print("Congradulation, you found the right number "
+        print("Congradulation！You found the right number "
               +"{0} in the {1} time!".format(result, counts[count-1]))
     else:
-        print("Pity, you've run out of your limited times.")
+        print("What a pity, you've run out of your limited oppertunities.")
 
 
 list_create = crt_num()
