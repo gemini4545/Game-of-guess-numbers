@@ -1,5 +1,5 @@
 import random
-# test
+
 
 # Create a radom 4-digit number automatically
 def crt_num():
