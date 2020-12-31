@@ -25,7 +25,7 @@ class InputNum():
                 ('Warning! A 4-digit number is needed, retry:\n')))
         while len(list_input) != len(set(list_input)):
             list_input = list(int(item) for item in str(input
-                ("warning! Non-repeating digitals are needed, retry:\n")))
+                ("warning! unduplicated digitals are needed, retry:\n")))
 
         return list_input
 
@@ -38,7 +38,7 @@ class InputNum():
                  ('Warning! A 4-digit number is needed, retry:\n')))
         while len(list_input) != len(set(list_input)):
             list_input = list(int(item) for item in str(input
-                 ("warning! Non-repeating digitals are needed, retry:\n")))
+                 ("warning! unduplicated digitals are needed, retry:\n")))
 
         return list_input
 
