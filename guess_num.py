@@ -13,7 +13,29 @@ def crt_num():
     return list_create
 
 
-prompt_1 = "Input 4 unduplicated numbers:\n\n"
+prompt_1 ="""
+
+Let's play a game called Guess Numbers!
+You need to find out a 4-digital number that matched to a given one.
+Don't worry, I'll give you some prompts to help you achieve it.
+
+You will get "1A" if one of the digitals you guess \
+hits the right number and position. And you will \
+get "1B" if you only guess the right digitals which is \
+in a wrong position.
+
+you'll not win untill "4A", which means all the digitals are \
+the right numbers and in the right place, too.
+
+Be carefull, the numbers must be unduplicated, \
+and you have only 10 opportunities.
+
+Are you ready? Lets's go!
+
+Input 4 unduplicated numbers:
+
+"""
+
 prompt_2 = "Try again:\n\n"
 prompt_3 = "Warning! Four numbers are required. Retry:\n"
 prompt_4 = "Warning! Unduplicated numbers are requrired. Retry:\n"
@@ -75,7 +97,7 @@ def compr_two_lists(list1, list2):
 
 
 list_create = crt_num()
-print(list_create)  # prove
+# print(list_create)  # give the answer at the beginning for testing
 list_temp = InputNum()
 list_input = list_temp.initial()
 
