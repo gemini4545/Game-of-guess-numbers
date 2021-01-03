@@ -33,33 +33,43 @@ and you have only 10 opportunities.
 Are you ready? Lets's go!
 
 Input 4 unduplicated numbers:
-
 """
 
-prompt_2 = "Try again:\n\n"
+prompt_2 = "Try again:\n"
 prompt_3 = "Warning! Four numbers are required. Retry:\n"
 prompt_4 = "Warning! Unduplicated numbers are requrired. Retry:\n"
+prompt_5 = "Oops! what you input is not only numbers. Try again:"
 
 # Ask player to input a proper 4-digit number
 class InputNum():
 
     def initial(self):
+        print(prompt_1)
+        while True:
+            try:
+                list_input = list(int(item) for item in str(input()))
+                while len(list_input) != 4:
+                    list_input = list(int(item) for item in str(input(prompt_3)))
+                while len(list_input) != len(set(list_input)):
+                    list_input = list(int(item) for item in str(input(prompt_4)))
+                return list_input
 
-        list_input = list(int(item) for item in str(input(prompt_1)))
-        while len(list_input) != 4:
-            list_input = list(int(item) for item in str(input(prompt_3)))
-        while len(list_input) != len(set(list_input)):
-            list_input = list(int(item) for item in str(input(prompt_4)))
-        return list_input
+            except ValueError:
+                print(prompt_5)
 
     def other_say(self):
+        print(prompt_2)
+        while True:
+            try:
+                list_input = list(int(item) for item in str(input()))
+                while len(list_input) != 4:
+                    list_input = list(int(item) for item in str(input(prompt_3)))
+                while len(list_input) != len(set(list_input)):
+                    list_input = list(int(item) for item in str(input(prompt_4)))
+                return list_input
 
-        list_input = list(int(item) for item in str(input(prompt_2)))
-        while len(list_input) != 4:
-            list_input = list(int(item) for item in str(input(prompt_3)))
-        while len(list_input) != len(set(list_input)):
-            list_input = list(int(item) for item in str(input(prompt_4)))
-        return list_input
+            except ValueError:
+                print(prompt_5)
 
 
 # Compare the 2 lists within limited times:
@@ -102,3 +112,4 @@ list_temp = InputNum()
 list_input = list_temp.initial()
 
 compr_two_lists(list_create, list_input)
+
