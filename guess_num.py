@@ -13,34 +13,63 @@ def crt_num():
     return list_create
 
 
+prompt_1 ="""
+
+Let's play a game called Guess Numbers!
+You need to find out a 4-digital number that matched to a given one.
+Don't worry, I'll give you some prompts to help you achieve it.
+
+You will get "1A" if one of the digitals you guess \
+hits the right number and position. And you will \
+get "1B" if you only guess the right digitals which is \
+in a wrong position.
+
+you'll not win untill "4A", which means all the digitals are \
+the right numbers and in the right place, too.
+
+Be carefull, the numbers must be unduplicated, \
+and you have only 10 opportunities.
+
+Are you ready? Lets's go!
+
+Input 4 unduplicated numbers:
+"""
+
+prompt_2 = "Try again:\n"
+prompt_3 = "Warning! Four numbers are required. Retry:\n"
+prompt_4 = "Warning! Unduplicated numbers are requrired. Retry:\n"
+prompt_5 = "Oops! what you input is not only numbers. Try again:"
+
 # Ask player to input a proper 4-digit number
 class InputNum():
 
     def initial(self):
+        print(prompt_1)
+        while True:
+            try:
+                list_input = list(int(item) for item in str(input()))
+                while len(list_input) != 4:
+                    list_input = list(int(item) for item in str(input(prompt_3)))
+                while len(list_input) != len(set(list_input)):
+                    list_input = list(int(item) for item in str(input(prompt_4)))
+                return list_input
 
-        list_input = list(int(item) for item in
-            str(input('Input 4 unduplicated numbers:\n\n')))
-        while len(list_input) != 4:
-            list_input = list(int(item) for item in str(input
-                ('Warning! A 4-digit number is needed, retry:\n')))
-        while len(list_input) != len(set(list_input)):
-            list_input = list(int(item) for item in str(input
-                ("warning! unduplicated digitals are needed, retry:\n")))
-
-        return list_input
+            except ValueError:
+                print(prompt_5)
 
     def other_say(self):
+        print(prompt_2)
+        while True:
+            try:
+                list_input = list(int(item) for item in str(input()))
+                while len(list_input) != 4:
+                    list_input = list(int(item) for item in str(input(prompt_3)))
+                while len(list_input) != len(set(list_input)):
+                    list_input = list(int(item) for item in str(input(prompt_4)))
+                return list_input
 
-        list_input = list(int(item) for item in
-                 str(input('Try agian:\n\n')))
-        while len(list_input) != 4:
-            list_input = list(int(item) for item in str(input
-                 ('Warning! A 4-digit number is needed, retry:\n')))
-        while len(list_input) != len(set(list_input)):
-            list_input = list(int(item) for item in str(input
-                 ("warning! unduplicated digitals are needed, retry:\n")))
-
-        return list_input
+            except ValueError:
+                print(prompt_5)
 
 
 # Compare the 2 lists within limited times:
@@ -71,15 +100,16 @@ def compr_two_lists(list1, list2):
 
     if list1 == list2:
         counts = ['1st','2nd','3rd','4th','5th','6th','7th','8th','9th']
-        print("Congradulation, you found the right number "
+        print("Congradulation！You found the right number "
               +"{0} in the {1} time!".format(result, counts[count-1]))
     else:
-        print("Pity, you've run out of your limited times.")
+        print("What a pity, you've run out of your limited oppertunities.")
 
 
 list_create = crt_num()
-print(list_create)  # prove
+# print(list_create)  # give the answer at the beginning for testing
 list_temp = InputNum()
 list_input = list_temp.initial()
 
 compr_two_lists(list_create, list_input)
+
