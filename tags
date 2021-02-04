@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+InputNum	guess_num.py	/^class InputNum():$/;"	c
+compr_two_lists	guess_num.py	/^def compr_two_lists(list1, list2):$/;"	f
+crt_num	guess_num.py	/^def crt_num():$/;"	f
+initial	guess_num.py	/^    def initial(self):$/;"	m	class:InputNum
+list_create	guess_num.py	/^list_create = crt_num()$/;"	v
+list_input	guess_num.py	/^list_input = list_temp.initial()$/;"	v
+list_temp	guess_num.py	/^list_temp = InputNum()$/;"	v
+other_say	guess_num.py	/^    def other_say(self):$/;"	m	class:InputNum
+prompt_2	guess_num.py	/^prompt_2 = "Try again:\\n"$/;"	v
+prompt_3	guess_num.py	/^prompt_3 = "Warning! Four numbers are required. Retry:\\n"$/;"	v
+prompt_4	guess_num.py	/^prompt_4 = "Warning! Unduplicated numbers are requrired. Retry:\\n"$/;"	v
+prompt_5	guess_num.py	/^prompt_5 = "Oops! what you input is not only numbers. Try again:"$/;"	v
